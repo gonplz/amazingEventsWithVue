@@ -1,0 +1,214 @@
+/* CAMBIOS EN GENERAL......... */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+/* CAMBIOS EN EL HEADER.............. */
+
+header{
+    background-color: rgb(41, 41, 41);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    min-height: 20vh;
+}
+.logo{
+    display: flex;
+    height: 50px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navega1,.navega2,.navega3,.navega4,.navega5{
+    display: block;
+    margin: 10px 0px;
+    padding: 10px;
+    background-color: rgb(209, 65, 149);
+    border-color: rgb(0, 0, 0);
+    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.navega1:hover,.navega2:hover,.navega3:hover,.navega4:hover,.navega5:hover {
+    background-color: rgb(74, 99, 180);
+}
+.active {
+    text-decoration: none;
+    background-color: rgb(74, 99, 180);
+}
+
+/* BANNER CON CARRUASEL....... */
+
+.carousel-item{
+    height: 500px;
+}
+
+/* CAMBIOS EN EL BODY....... */
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #E90064;
+}
+
+/* Cambios en el segundo NAV con la barra del buscador...... */
+
+.container_nav_down{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e0186f;
+}
+.category{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 20px;
+}
+.srech{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 20px;
+}
+.ul_row{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+/* CAMBIOS Main y las Cards!...  */
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: rgb(212, 211, 209);
+    min-height: 70vh;
+}
+.text_center{
+    text-align: center;
+    background-color: #EEEEEE;
+}
+.title_card{
+    font-weight: 900;
+    color: rgb(41, 41, 41) !important;
+}
+.card img{
+    height: 12rem;
+    object-fit: cover;
+}
+.card{
+    display: block;
+    margin: 10px 0px;
+    padding: 3px;
+    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0);
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+.card:hover{
+    transform: scale(1.09);
+    margin: 12px;
+}
+.ul_colum{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*  CAMBIOS EN EL FOOTER............................ */
+footer{
+    background-color: rgb(41, 41, 41);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    min-height: 10vh;
+
+}
+.icons_grid{
+    height: 100px;
+    padding: 20px;
+}
+.foot_text{
+    display: flex;
+    justify-content: center;
+    color: #EEEEEE;
+    padding: 20px;
+}
+
+.legend_table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 10px 0px;
+    padding: 5px;
+    background-color: rgb(74, 99, 180);
+    border-color: rgb(0, 0, 0);
+    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+tr,th,td{
+    text-align: center;
+    width: 30%;
+    height: 30%;
+}
+
+/* Media Querys ..............................................*/
+
+@media only screen and (max-width: 649px){
+
+main{
+    padding: 28px;
+}
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.logo{
+    justify-items: center;
+    height: fit-content;
+    width: 200px;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.ul_row{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+}
+.container_nav_down{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+#category_nav{
+    display: flex;
+    align-items: flex-start;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+}
