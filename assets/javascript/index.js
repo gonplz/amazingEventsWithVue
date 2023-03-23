@@ -19,15 +19,17 @@ createApp({
             .then(data => {
                 // console.log(data.events)
                 this.dataEvents = data.events
-                console.log(this.dataEvents)
+                // console.log(this.dataEvents)
 
                 let arrayCate = this.dataEvents.map(evento => evento.category)
+                console.log(arrayCate)
 
                 this.dataCheck = arrayCate.filter((item, index) => {
                     return arrayCate.indexOf(item) === index;
                 })
-                console.log(this.dataCheck)
+                // console.log(this.dataCheck)                
             })
+            .catch(error=> console.log(error))
     },
     methods: {
 
