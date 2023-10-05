@@ -14,14 +14,17 @@
 
 <body>
     <header>
+
         <img class="logo" src="./assets/img/Logo_Amazing_Events.png" alt="Logo_Amazing_Events">
+
         <nav class="gap-2">
-            <a class="navega1 active" href="#">HOME</a>
-            <a class="navega1" href="./upcomingevenst.html">UP COMING</a>
+            <a class="navega1" href="./index.html">HOME</a>
+            <a class="navega2" href="./upcomingevenst.html">UP COMING</a>
             <a class="navega3" href="./past_events.html"> PAST EVENTS</a>
             <a class="navega4" href="./contact.html">CONTACT</a>
-            <a class="navega5" href="./stats.html">STATS</a>
+            <a class="navega5 active" href="#">STATS</a>
         </nav>
+
     </header>
 
     <div id="carouselExample" class="carousel slide">
@@ -66,62 +69,66 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    
+    <main class="d-flex flex-column align-content-center">
 
-    <div id="app">
+        <table class="table">
+            <legend class="legend_table">Events statistics</legend>
+            <thead>
+                <tr>
+                    <th>Events with the highest percentage of attendance</th>
+                    <th>Events with the lowest percentage of attendance</th>
+                    <th>Events with larger capacity</th>
+                </tr>
+            </thead>
 
-        {{filterCheck}}
+            <tbody id="table1" >
+                <!-- <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+            </tbody>
 
-        <div class="container_nav_down">
-            <div class="category">
-                <form action="">
-                    <fieldset>
-                        <legend>Category</legend>
-                        <ul id="category_nav" class="gap-2 ul_row">
-                            <template v-for="cate of dataCheck">
-                                <li><label><input v-model="inputCheck" :value="cate" type="checkbox" name="categorias">
-                                        {{cate}}
-                                    </label></li>
-                            </template>
-                        </ul>
-                    </fieldset>
-                </form>
-            </div>
+        </table>
 
-            <div class="srech">
-                <form class="d-flex" role="search">
-                    <input v-model="stringSearch" id="search_input" class="form-control me-2" type="search"
-                        placeholder="" aria-label="Search">
-                    <button class="btn btn-light" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="25"
-                            height="25" fill="currentColor" class="bi bi-balloon" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984ZM13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0Zm-6.938-.495a2.003 2.003 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5c0-.276-.226-.504-.498-.459a3.003 3.003 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495Z" />
-                        </svg></button>
-                </form>
-            </div>
+        <table class="table">
+            <legend class="legend_table">Upcoming events statistics by category</legend>
+            <thead>
+                <tr>
+                    <th>Categories</th>
+                    <th>Revenues</th>
+                    <th>Percentage of attendance</th>
+                </tr>
+            </thead>
+            <tbody id="table2">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
 
-        </div>
+        </table>
 
-        <main>
-            <div v-if="resultFilter.length > 0" class="d-flex flex-wrap justify-content-center gap-5" id="card_index">
-                <template v-for="element of resultFilter">
-                    <div class="card" style="width: 18rem;">
-                        <img :src="element.image" class="card-img-top" alt="...">
-                        <div class="card-body text_center">
-                            <h5 class="card-title title_card">{{element.name}}</h5>
-                            <p class="card-text">{{element.description}}</p>
-                            <p>Price: {{element.price}} U$D</p>
-                            <a :href="'./details.html?id='+(element._id)" class="navega1">View More</a>
-                        </div>
-                    </div>
-                </template>
-            </div>
-
-            <div v-else>
-                <h2 class="card-text"> Not Found Category </h2>
-            </div>
-
-        </main>
-    </div>
+        <table class="table">
+            <legend class="legend_table">Past Events statistics by category</legend>
+            <thead>
+                <tr>
+                    <th>Categories</th>
+                    <th>Revenues</th>
+                    <th>Percentage of attendance</th>
+                </tr>
+            </thead>
+            <tbody id="table3">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 
     <footer>
         <div class="icons_grid">
@@ -138,14 +145,12 @@
         </div>
 
     </footer>
-
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 
-    <script src="./assets/javascript/index.js"></script>
+        <script src="./assets/javascript/stats.js"></script>
 </body>
 
 </html>

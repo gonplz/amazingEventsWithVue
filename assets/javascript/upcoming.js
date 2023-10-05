@@ -18,18 +18,16 @@ createApp({
             .then(response => response.json())
             .then(data => {
                 // console.log(data.events)
-                this.dataEvents = data.events
-                // console.log(this.dataEvents)
+                this.dataEvents = data.events.filter(elemento => new Date(elemento.date) > new Date(data.currentDate))
+                console.log(this.dataEvents)
 
                 let arrayCate = this.dataEvents.map(evento => evento.category)
-                console.log(arrayCate)
 
                 this.dataCheck = arrayCate.filter((item, index) => {
                     return arrayCate.indexOf(item) === index;
                 })
-                // console.log(this.dataCheck)                
+                console.log(this.dataCheck)
             })
-            .catch(error=> console.log(error))
     },
     methods: {
 
@@ -42,10 +40,3 @@ createApp({
         }
     }
 }).mount("#app")
-
-
-// Segunda forma de hacer la funcion de filtros cruzados
-// filterCheck: function () {
-//     let filterCategory = this.inputCheck.length == 0 ? this.dataEvents : this.dataEvents.filter(elemento => this.inputCheck.includes(elemento.category))
-//     return this.stringSearch == "" ? filterCategory : filterCategory.filter(elemento => elemento.name.toLowerCase().includes(this.stringSearch.toLowerCase().trim()))
-// }

@@ -16,42 +16,44 @@
     <header>
         <img class="logo" src="./assets/img/Logo_Amazing_Events.png" alt="Logo_Amazing_Events">
         <nav class="gap-2">
-            <a class="navega1 active" href="#">HOME</a>
-            <a class="navega1" href="./upcomingevenst.html">UP COMING</a>
+
+            <a class="navega1" href="./index.html">HOME</a>
+            <a class="navega2 active" href="#">UP COMING</a>
             <a class="navega3" href="./past_events.html"> PAST EVENTS</a>
             <a class="navega4" href="./contact.html">CONTACT</a>
             <a class="navega5" href="./stats.html">STATS</a>
+
         </nav>
     </header>
 
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="./assets/img/12220175_4948161.jpg" class="" alt="...">
+                <img src="./assets/img/12220194_4944287.jpg" class="" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>HOME</h5>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./assets/img/12220175_4948161.jpg" class="" alt="...">
+                <img src="./assets/img/12220194_4944287.jpg" class="" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>UP COMING EVENTS</h5>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./assets/img/12220175_4948161.jpg" class="" alt="...">
+                <img src="./assets/img/12220194_4944287.jpg" class="" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>PAST EVENTS</h5>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./assets/img/12220175_4948161.jpg" class="" alt="...">
+                <img src="./assets/img/12220194_4944287.jpg" class="" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>CONTACT</h5>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./assets/img/12220175_4948161.jpg" class="" alt="...">
+                <img src="./assets/img/12220194_4944287.jpg" class="" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>STATS</h5>
                 </div>
@@ -98,9 +100,7 @@
                         </svg></button>
                 </form>
             </div>
-
         </div>
-
         <main>
             <div v-if="resultFilter.length > 0" class="d-flex flex-wrap justify-content-center gap-5" id="card_index">
                 <template v-for="element of resultFilter">
@@ -110,7 +110,7 @@
                             <h5 class="card-title title_card">{{element.name}}</h5>
                             <p class="card-text">{{element.description}}</p>
                             <p>Price: {{element.price}} U$D</p>
-                            <a :href="'./details.html?id='+(element._id)" class="navega1">View More</a>
+                            <a :href="'./details.html?id='+element._id" class="navega1">View More</a>
                         </div>
                     </div>
                 </template>
@@ -119,7 +119,6 @@
             <div v-else>
                 <h2 class="card-text"> Not Found Category </h2>
             </div>
-
         </main>
     </div>
 
@@ -145,7 +144,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 
-    <script src="./assets/javascript/index.js"></script>
+    <script src="./assets/javascript/upcoming.js"></script>
 </body>
 
 </html>
